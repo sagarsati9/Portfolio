@@ -1,0 +1,75 @@
+.project_card {
+    width: 20rem;
+    padding: 1rem;
+    margin: 1rem 1rem;
+    background: var(--cardColor);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.card_image {
+    width: 20rem;
+    height: 18rem;
+    background: var(--cardColor);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card_description {
+    background: var(--cardColor);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    width: 20rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.project_name {
+    font-size: 1.4rem;
+}
+
+.project_tech {
+    text-align: center;
+    font: larger;
+}
+
+.card_link {
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card_button {
+    text-decoration: none;
+    color: var(--brandColor);
+}
+@media only screen and (max-width: 600px) {
+    
+    .project_card {
+        width: 17rem;
+    }
+
+    .card_image {
+        width: 17rem;
+    }
+
+    .card_description {
+        width: 17rem;
+    }
+
+    .project_name {
+        font-size: large;
+    }
+
+    .card_link {
+        width: 17rem;
+        display: flex;
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list {
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    list-style: none;
+}
+
+.white-background {
+    background-color: white;
+    border-radius: 20%;
+}
+
+.icon {
+    color: black;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+}
+
+.icon:hover {
+    color: #ff5f02;
+}
+
+span {
+    color: var(--textColor);
+    font-size: 1.7rem;
+}
+
+.navigation__link {
+    display: flex;
+    text-decoration: none!important;
+    align-items: center;
+}
+
+.navigation__checkbox {
+    display: none;
+}
+  
+.navigation__button {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;	
+    background: var(--cardColor);
+    border-radius: 50%;
+    z-index: 300;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.navigation__background {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background: var(--backgroundColor);
+
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.navigation__nav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    opacity: 0;
+    width: 100%;
+    visibility: hidden;
+    z-index: 200;
+    transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation__item {
+    margin: 0.5rem 0;
+}
+
+.navigation__link span {
+    margin-right: 1.5rem;
+}
+
+.navigation__link:hover {
+    transform: scale(1.1);
+}
+
+.navigation__checkbox:checked~.navigation__background {
+    transform: scale(80)
+}
+
+.navigation__checkbox:checked~.navigation__nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation__icon {
+    position: relative;
+    margin-top: 2.5rem;
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+    display: inline-block;
+    width: 2.2rem;
+    height: 2px;
+    background-color: var(--textColor);
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+}
+
+.navigation__icon::before {
+    top: -.8rem;
+}
+
+.navigation__icon::after {
+    top: .8rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+    top: -1rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+    top: 1rem;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon {
+    background-color: transparent;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.theme_button {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.theme_button:hover {
+    scale: 1.1;
+}
+
+@media screen and (min-width: 1000px) {
+    .navigation__link:link,
+    .navigation__link:visited {
+        font-size: 3.8rem;
+    }
+    
+    .navigation__icon {
+        margin-top: 3.5rem;
+    }
+
+    .navigation__icon,
+    .navigation__icon::before,
+    .navigation__icon::after {
+        width: 3rem;
+    }
+
+    .navigation__button {
+      top: 4rem;
+      right: 4rem;
+      height: 7rem;
+      width: 7rem;
+    }
+
+    .theme_button {
+        top: 4rem;
+        left: 4rem;
+    }
+
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem;
+      height: 6rem;
+      width: 6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .navigation__nav {
+        min-height: 100vh;
+    }
+
+    .nav-list {
+        margin-top: 1rem;
+    }
+
+    .navigation__link:link,
+    .navigation__link:visited {
+        font-size: 1rem;
+    }
+
+    .navigation__link span {
+        font-size: 1rem;
+    }
+
+    .navigation__icon {
+        margin-top: 2rem;
+    }
+
+    .navigation__icon,
+    .navigation__icon::before,
+    .navigation__icon::after {
+        width: 1.5rem;
+    }
+
+    .navigation__button {
+      top: 1rem;
+      right: 1rem;
+      height: 4rem;
+      width: 4rem;
+    }
+    
+    .theme_button {
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .navigation__background {
+      top: 1rem;
+      right: 1rem;
+      height: 4rem;
+      width: 4rem;
+    }
+}
